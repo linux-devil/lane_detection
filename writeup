@@ -1,0 +1,49 @@
+Project: Finding Lane Lines on the Road
+
+Tools used:
+
+Color selection
+Region of interest selection
+Grayscaling
+Gaussian smoothing
+Canny Edge Detection
+Hough Tranform line detection
+Extrpolation techniques
+
+Libraries used:
+
+matplotlib
+numpy
+cv2
+
+Steps:
+
+1. Read an image
+2. Defined helper functions:
+    2.1 grayscale
+    2.2 cany
+    2.3 gaussian_blur
+    2.4 region_of_interest
+    2.6 extrapolate
+    2.7 draw_lines - modifications done in this function to include extrapolation technique
+    2.8 hough_lines
+    2.9 weighted_img
+3. pipeline declaration:
+    3.1 process_pipeline takes image as input (input = mpimg.imread(image_file_location))
+    3.2 Pipeline applies following functions as given in the order:
+        3.2.1 grayscale : for grayscale
+        3.2.2 gaussian_blur  : guassian noise kernel
+        3.2.3 cany : to detect edges
+        3.2.4 region_of_interest : for masking 
+        3.2.5 hough_lines : returns image with hough lines drawn
+        3.2.6 weighted_img : output is also returned as value returned by pipeline function 
+    3.3 image is returned as output
+4. Video files were loaded and ouput was further saved . 
+
+Learning(Aha moments):
+1 . To use cany and hough line deection technique
+2 . Understood the concepts related to image files.
+
+Improvements:
+1. SolidYellowLeft flickers in between , somehow need to improve extrpolation techniques used so far. Waiting for feedback, as I am not sure technique I am using is correct or not , but it gives visually correct output
+2. Need to go through open CV.
